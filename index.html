@@ -1,85 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/stackblitz-favicon-editor.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>spuntentertainment Podcast Player | Next-Gen Audio Experience</title>
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/stackblitz-favicon-editor.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>spuntentertainment podcast player</title>
-  </head>
-  <body>
-    <header class="brand-header">
-      <h1>spuntentertainment shorts, stories, parables, tall-tales, and epics</h1>
-    </header>
-    
-    <main class="player-container">
-      <section class="player-controls">
-        <div class="artwork-container">
-          <img src="placeholder-artwork.jpg" alt="Podcast artwork" class="artwork">
-        </div>
-        <div class="progress-container">
-          <div class="progress-bar" style="--progress: 0%"></div>
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/stackblitz-favicon-editor.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>spuntentertainment podcast player</title>
-  </head>
-  <body>
-    <header class="brand-header">
-      <h1>spuntentertainment podcasts</h1>
-    </header>
-    
-    <main class="player-container">
-      <section class="player-controls">
-        <div class="artwork-container">
-          <img src="./public/spunt-cover-1.png" alt="spuntentertainment Podcast Cover Art" class="artwork">
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/stackblitz-favicon-editor.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>spuntentertainment podcast player</title>
-  </head>
-  <body>
-    <header class="brand-header">
-      <h1>spuntentertainment podcasts</h1>
-    </header>
-    
-    <main class="player-container">
-      <section class="player-controls">
-        <div class="artwork-container">
-          <img src="./public/spunt-cover-1.png" alt="spuntentertainment artwork" class="artwork">
-        </div>
-        <div class="progress-container">
-          <div class="progress-bar"></div>
-          <div class="time-display">
-            <span class="current-time">0:00</span>
-            <span class="duration">0:00</span>
-          </div>
-        </div>
-        <div class="controls">
-          <button class="play-pause">▶</button>
-          <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1">
-        </div>
-      </section>
-
-      <section class="episode-list">
-        <h2>latest episodes</h2>
-        <div class="episodes"></div>
-      </section>
-    </main>
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>spuntentertainment-player</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="player">
+    <!-- Audio element required by updated JS -->
+    <audio></audio>
+    <button class="play-pause">▶</button>
+    <div class="progress-bar"></div>
+    <div class="time-display">
+      <span class="current-time">0:00</span> / 
+      <span class="duration">0:00</span>
+    </div>
+    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1">
+  </div>
+  <div class="episode"></div>
+  <script type="module" src="./main.js"></script>
+</body>
 </html>

@@ -1,6 +1,7 @@
 import './style.css';
 
-const audio = new Audio();
+// Get audio element from HTML
+const audio = document.querySelector('audio');
 const player = {
   isPlaying: false,
   currentEpisode: null,
@@ -8,9 +9,9 @@ const player = {
     {
       title: 'spuntentertainment episode one',
       duration: '4:54',
-      url: 'https://buzz-worthy.spuntentertainment.buzz/Spuntentertainment_%20A%20Disclaimer.wav',
-      artwork: './public/spunt-cover-1.png',
-      description: 'spuntentertainment episode one should really be considered as more like a trailer or a teaser.  This is sort of like the first thing that came out so it is what is is. "I love it, I hate it, it is equal parts of aweful and awesome at the same time. I gotta get more.." --HashbrownnKazang'
+    url: 'https://buzz-worthy.spuntentertainment.buzz/spuntentertainment_%20A%20Disclaimer.wav',
+      artwork: '/spunt-cover-1.png',
+      description: 'spuntentertainment episode one should really be considered as more like a trease.  This is sort of like the first thing that came out so it is what is is. "I love it, I hate it, it is equal parts of aweful and awesome at the same time. I gotta get more right fucking nnw" --HashbrownnKazang'
     }
   ]
 };
@@ -77,11 +78,29 @@ function togglePlay() {
 function playEpisode(url) {
   if (audio.src !== url) {
     audio.src = url;
-    audio.load();
+    audio.load().catch(error => {
+      console.error('Error loading audio:', error);
+      displayError('Failed to load audio - please check network connection');
+    });
   }
-  player.isPlaying = true;
-  audio.play();
-  updatePlayerState();
+  
+  audio.play().then(() => {
+    player.isPlaying = true;
+    updatePlayerState();
+  }).catch(error => {
+    console.error('Playback failed:', error);
+    displayError('Playback failed - please check audio format support');
+    player.isPlaying = false;
+    updatePlayerState();
+  });
+}
+
+function displayError(message) {
+  const errorEl = document.createElement('div');
+  errorEl.className = 'error-message';
+  errorEl.textContent = message;
+  document.body.appendChild(errorEl);
+  setTimeout(() => errorEl.remove(), 5000);
 }
 
 function updatePlayerState() {

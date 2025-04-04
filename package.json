@@ -1,7 +1,7 @@
 {
-  "name": "spuntentertainment-webcontainer-api",
+  "name": "spuntentertainment-webcon",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,9 +9,14 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.1.0"
+    "vite": "latest"
   },
   "dependencies": {
-    "@webcontainer/api": "^1.1.3"
+    "@aws-sdk/client-s3": "^3.782.0",
+    "@aws-sdk/s3-request-presigner": "^3.782.0",
+    "@webcontainer/api": "latest",
+    "express": "latest",
+    "html": "latest",
+    "nodemon": "latest"
   }
 }
