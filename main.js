@@ -9,9 +9,9 @@ const player = {
     {
       title: 'spuntentertainment episode one',
       duration: '4:54',
-    url: 'https://buzz-worthy.spuntentertainment.buzz/spuntentertainment_%20A%20Disclaimer.wav',
+      url: './assets/Spuntentertainment_ A Disclaimer.wav',
       artwork: '/spunt-cover-1.png',
-      description: 'spuntentertainment episode one should really be considered as more like a trease.  This is sort of like the first thing that came out so it is what is is. "I love it, I hate it, it is equal parts of aweful and awesome at the same time. I gotta get more right fucking nnw" --HashbrownnKazang'
+      description: 'spuntentertainment episode one should really be considered as more like a tease.  This is sort of like the first thing that came out, so, it is what it is. "I love it, I hate it, it is equal parts of aweful and awesome at the same time. I gotta get more right fucking nnw" --HashbrownnKazang'
     }
   ]
 };
